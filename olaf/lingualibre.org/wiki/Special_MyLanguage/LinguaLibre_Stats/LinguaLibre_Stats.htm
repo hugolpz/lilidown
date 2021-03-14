@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>LinguaLibre:Statystyki – Lingua Libre</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"Project","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":4,"wgPageName":"LinguaLibre:Stats/pl","wgTitle":"Stats/pl","wgCurRevisionId":477829,"wgRevisionId":477829,"wgArticleId":445504,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"pl","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],"wgMonthNamesShort":["","sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"],"wgRelevantPageName":"LinguaLibre:Stats/pl","wgRelevantArticleId":445504,"wgRequestId":"79285ec90d5823b5d85610bd","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgULSAcceptLanguageList":["pl","en-us","en"],"wgULSCurrentAutonym":"polski","wgInternalRedirectTargetUrl":"https://lingualibre.org/wiki/LinguaLibre:Stats/pl","QueryViz":[{"query":"\nSELECT\n(COUNT(DISTINCT ?record) AS ?records)\n(COUNT(DISTINCT ?speaker) AS ?speakers)\n(COUNT(DISTINCT ?language) AS ?languages)\nWHERE {\n  ?record prop:P2 entity:Q2 .\n  ?record prop:P5 ?speaker .\n  ?record prop:P4 ?language .\n}\n","columnMap":{"records":"Nagrania","speakers":"Spikerzy","languages":"Jezyki"},"pagination":0},{"query":"\nSELECT\n?yearmonth\n(COUNT(DISTINCT ?record) AS ?records)\n(COUNT(DISTINCT ?speaker) AS ?speakers)\n(COUNT(DISTINCT ?language) AS ?languages)\nWHERE {\n  ?record prop:P2 entity:Q2 .\n  ?record prop:P6 ?date .\n  ?record prop:P5 ?speaker .\n  ?record prop:P4 ?language .\n  BIND( SUBSTR(str(?date), 0, 8) as ?yearmonth )\n}\nGROUP BY ?yearmonth\nORDER BY ?yearmonth\n","columnMap":{"yearmonth":"Miesiąc","records":"Nowe nagrania","speakers":"Aktywni spikerzy","languages":"Aktywne języki"},"pagination":0},{"query":"\nselect ?language ?languageLabel ?code (COUNT(DISTINCT ?record) as ?nb)\nwhere {\n  ?record prop:P2 entity:Q2 .\n  ?record prop:P4 ?language .\n  OPTIONAL { ?language prop:P13 ?code }\n  OPTIONAL { ?language rdfs:label ?languageLabel . FILTER (lang(?languageLabel) = \"pl\"). }\n}\nGROUP BY ?language ?languageLabel ?code\nORDER BY DESC(?nb)\n","columnMap":{"language":"Qid języka","langagelabel":"Język","code":"Kod ISO 639-3","nb":"Liczba nagrań"},"pagination":"10"},{"query":"\nSELECT ?locutor ?locutorLabel ?nb WHERE {\n  {\n    SELECT ?locutor (COUNT(?record) as ?nb)\n    WHERE {\n        ?record prop:P2 entity:Q2 .\n        ?record prop:P5 ?locutor .\n    }\n    GROUP BY ?locutor ?locutorLabel\n    ORDER BY DESC(?nb)\n    LIMIT 50\n  }\n  SERVICE wikibase:label {\n    bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\" .\n    ?locutor rdfs:label ?locutorLabel .\n  }\n}\nORDER BY DESC(?nb)\n","columnMap":{"locutor":"Qid","locutorlabel":"Spiker","nb":"Liczba nagrań","languages":"Języki"},"pagination":"10"}],"QueryVizEndpoint":"https://lingualibre.org/bigdata/namespace/wdq/sparql","wgTranslatePageTranslation":"translation"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"ready","user.tokens":"loading","ext.translate.tag.languages":"ready","ext.queryviz.style":"ready","ext.translate":"ready","wikibase.client.init":"ready","ext.uls.pt":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","skins.bluell.styles":"ready"});mw.loader.implement("user.tokens@06e78ab",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.action.view.redirect","ext.queryviz","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","wikibase.ui.entitysearch","ext.uls.init","ext.uls.interface","skins.bluell.js"]);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=pl&amp;modules=ext.queryviz.style%7Cext.translate%7Cext.translate.tag.languages%7Cext.uls.pt%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cskins.bluell.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=bluell"/>
+<script async="" src="/load.php?debug=false&amp;lang=pl&amp;modules=startup&amp;only=scripts&amp;skin=bluell"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=pl&amp;modules=site.styles&amp;only=styles&amp;skin=bluell"/>
+<meta name="generator" content="MediaWiki 1.31.7"/>
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
+<link rel="shortcut icon" href="/resources/assets/logo/lingualibre-favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Lingua Libre (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://lingualibre.org/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Kanał Atom Lingua Libre" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--[if lt IE 9]><script src="/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=bluell&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-4 ns-subject page-LinguaLibre_Stats_pl rootpage-LinguaLibre_Stats skin-bluell action-view"><!-- START BLUELL TEMPLATE -->
+		<header id="navwrapper">
+			<nav role="navigation" id="menu">
+				<ul class="title-area" role="banner">
+					<li>
+						<div class="title-name">
+							<a href="/wiki/LinguaLibre:Main_Page">
+								<img alt="Lingua Libre" class="top-bar-logo" src="/resources/assets/logo/lingualibre-logo-2x.png">
+								<h1 class="title-name">Lingua Libre</h1>
+							</a>
+						</div>
+					</li>
+					<li class="toggle-topbar menu-icon">
+						<a href="#"><span>Menu</span></a>
+					</li>
+				</ul>
+
+				<section id="top-bar-sections">
+					<ul id="top-bar-top-menu">
+						<!-- Search form -->
+						<li>
+							<form action="/index.php" id="searchform" class="mw-search" role="search">
+								<input type="search" name="search" placeholder="Szukaj" title="Przeszukaj Lingua Libre [f]" accesskey="f" id="searchInput"/>								<button type="submit" title="Szukaj"></button>
+							</form>
+						</li>
+
+						<!-- Language selector -->
+						<li>
+							<li id="pt-uls" class="active"><a href="#" class="uls-trigger">polski</a></li>						</li>
+
+						<!-- Record call-to-action -->
+						<li id="p-record">
+														<a href="https://lingualibre.org/wiki/Special:RecordWizard" accesskey="r">Nagrywanie</a></a>
+						</li>
+
+						<!-- If user is logged in output echo location -->
+						
+						<!-- Personal menu dropdown -->
+						<li id="personal-menu" class="dropdown mobile-menu">
+							<input id="personal-input" type="checkbox" role="button" aria-labelledby="personal-button" autocomplete="off" class="dropdown-input mobile-menu-input">
+							<label id="personal-button" for="personal-input" class="dropdown-label mobile-menu-label"></label>
+							<ul id="personal" class="dropdown-content mobile-menu-content">
+								<li id="pt-login"><a href="https://lingualibre.org/index.php?title=Special:UserLogin&amp;returnto=LinguaLibre%3AStats%2Fpl&amp;returntoquery=title%3DSpecial%253AMyLanguage%252FLinguaLibre%253AStats" title="Zachęcamy do zalogowania się, choć nie jest to obowiązkowe. [o]" accesskey="o">Zaloguj się do Wikimedia Commons</a></li>							</ul>
+							<label id="personal-mask" for="personal-input" class="mobile-menu-mask"></label>
+						</li>
+
+					</ul>
+
+					<div id="top-bar-bottom-menu">
+													<ul id="p-LEFT">
+																<li id="n-recordwizard"><a href="/wiki/Special:RecordWizard">Record Wizard</a></li><li id="n-talk"><a href="/wiki/LinguaLibre:Chat_room">Dyskusja</a></li><li id="n-menu-statistics"><a href="/wiki/Special:MyLanguage/LinguaLibre:Stats">Statystyki</a></li><li id="n-menu-datasets"><a href="https://lingualibre.org/datasets/" rel="nofollow">Zbiory danych</a></li><li id="n-help"><a href="/wiki/Special:MyLanguage/Help:Main" title="Tutaj możesz dowiedzieć się wielu rzeczy.">Pomoc</a></li><li id="n-about"><a href="/wiki/Special:MyLanguage/LinguaLibre:About">O Lingua Libre</a></li>															</ul>
+													<ul id="p-RIGHT">
+																															</ul>
+													</ul>
+													</ul>
+						
+						<!-- Edit button -->
+																										<span id="ca-viewsource"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;action=edit" title="Ta strona jest zabezpieczona. Możesz zobaczyć tekst źródłowy. [e]" accesskey="e">Edytuj</a></span>						
+						<!-- Action menu -->
+						<div id="actions-menu" class="dropdown">
+							<input id="actions-input" type="checkbox" role="button" aria-labelledby="actions-button" autocomplete="off" class="dropdown-input">
+							<label id="actions-button" for="actions-input" class="dropdown-label">Akcje</label>
+							<ul id="actions" class="dropdown-content">
+								<li id="ca-nstab-project" class="selected"><a href="/wiki/LinguaLibre:Stats/pl" title="Zobacz stronę projektu [a]" accesskey="a">Strona projektu</a></li><li id="ca-talk" class="new"><a href="/index.php?title=LinguaLibre_talk:Stats/pl&amp;action=edit&amp;redlink=1" rel="discussion" title="Dyskusja o zawartości tej strony (strona nie istnieje) [t]" accesskey="t">Dyskusja</a></li><li id="ca-history"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;action=history" title="Starsze wersje tej strony. [h]" accesskey="h">historia</a></li>															</ul>
+						</div>
+						<aside id="hamburger-menu" class="mobile-menu">
+							<input id="hamburger-input" type="checkbox" role="button" aria-labelledby="hamburger-label" autocomplete="off" class="mobile-menu-input">
+							<label id="hamburger-button" for="hamburger-input"  class="mobile-menu-label">Menu</label>
+							<ul id="hamburger" class="mobile-menu-content">
+								<!-- Hamburger search form -->
+								<li id="m-searchitem">
+									<form action="/index.php" id="m-searchform" class="mw-search" role="search">
+										<input type="search" name="search" placeholder="Szukaj" title="Przeszukaj Lingua Libre [f]" accesskey="f" id="m-searchInput"/>										<button type="submit" title="Szukaj"></button>
+									</form>
+								</li>
+								<!-- Hamburger navigation -->
+																											<li id="mn-recordwizard"><a href="/wiki/Special:RecordWizard">Record Wizard</a></li><li id="mn-talk"><a href="/wiki/LinguaLibre:Chat_room">Dyskusja</a></li><li id="mn-menu-statistics"><a href="/wiki/Special:MyLanguage/LinguaLibre:Stats">Statystyki</a></li><li id="mn-menu-datasets"><a href="https://lingualibre.org/datasets/" rel="nofollow">Zbiory danych</a></li><li id="mn-help"><a href="/wiki/Special:MyLanguage/Help:Main">Pomoc</a></li><li id="mn-about"><a href="/wiki/Special:MyLanguage/LinguaLibre:About">O Lingua Libre</a></li>																		<!-- Hamburger Actions -->
+								<li id="m-action-menu">
+									<a href="#">Akcje</a>
+									<ul>
+										<li id="mca-nstab-project" class="selected"><a href="/wiki/LinguaLibre:Stats/pl">Strona projektu</a></li><li id="mca-talk" class="new"><a href="/index.php?title=LinguaLibre_talk:Stats/pl&amp;action=edit&amp;redlink=1" rel="discussion" title=" (strona nie istnieje)">Dyskusja</a></li><li id="mca-viewsource"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;action=edit">Edytuj</a></li><li id="mca-history"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;action=history">historia</a></li>																			</ul>
+								</li>
+							</ul>
+							<label id="hamburger-mask" for="hamburger-input" class="mobile-menu-mask"></label>
+						</aside>
+					</div>
+				</section>
+			</nav>
+		</header>
+
+		<section id="page-content">
+			<aside style="display: none;"> <!-- TODO: temporary hidden, how should it be styled ? -->
+
+								
+				<div id="mw-js-message" style="display:none;"></div>
+			</aside>
+
+			<article id="content" role="main">
+				<header id="contentHeading">
+					<hgroup>
+													<h4 class="namespace">LinguaLibre</h4>
+												<h1 id="firstHeading" class="title">LinguaLibre:Statystyki</h1>
+						<h2 id="contentSub">LinguaLibre Alpha powstała w sierpniu 2018. Do kwietnia 2019 <i>LiLi</i> osiągnęła <b>100.000</b>  nagrań w 46 językach dzięki 128 różnym spikerom.  Projekt osiągnął <b>200.000</b> nagrań (82 języki, 268 osób) w styczniu 2020, <b>300.000</b> nagrań (91 języków, 357 spikerów) we wrześniu 2020 i <b>400.000</b> nagrań (107 języków, 481 spikerów) w lutym 2021.</h2>
+						<div class="mw-indicators mw-body-content">
+<div id="mw-indicator-stats" class="mw-indicator"></div>
+</div>
+					</hgroup>
+				</header>
+				<div id="bodyContent" class="mw-bodytext">
+					<div id="mw-content-text" lang="pl" dir="ltr" class="mw-content-ltr"><div class="mw-pt-translate-header noprint" dir="ltr" lang="pl">Ta strona to <span class="plainlinks"><a rel="nofollow" class="external text" href="https://lingualibre.org/index.php?title=Special:Translate&amp;group=page-LinguaLibre%3AStats&amp;action=page&amp;filter=&amp;language=pl">przetłumaczona wersja</a></span> strony <a href="/wiki/LinguaLibre:Stats" title="LinguaLibre:Stats">LinguaLibre:Stats</a>, a tłumaczenie jest ukończone w 100%.</div><hr/><div class="mw-parser-output"><div class="mw-pt-languages noprint" lang="pl" dir="ltr"><div class="mw-pt-languages-label">Inne języki:</div><div class="mw-pt-languages-list autonym"><a href="/wiki/LinguaLibre:Stats/bn" class="mw-pt-progress mw-pt-progress--complete" title="লিঙ্গুয়ালিব্রে:পরিসংখ্যান (przetłumaczono 91%)" lang="bn">বাংলা</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/ca" class="mw-pt-progress mw-pt-progress--complete" title="Estadístiques (przetłumaczono 100%)" lang="ca">català</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/de" class="mw-pt-progress mw-pt-progress--complete" title="LinguaLibre:Statistiken (przetłumaczono 91%)" lang="de">Deutsch</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats" class="mw-pt-progress mw-pt-progress--complete" title="LinguaLibre:Stats (przetłumaczono 100%)" lang="en">English</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/eo" class="mw-pt-progress mw-pt-progress--complete" title="Lingvalibro:Statistiko (przetłumaczono 91%)" lang="eo">Esperanto</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/es" class="mw-pt-progress mw-pt-progress--complete" title="Estadísticas (przetłumaczono 91%)" lang="es">español</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/fr" class="mw-pt-progress mw-pt-progress--complete" title="Statistiques (przetłumaczono 100%)" lang="fr">français</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/ja" class="mw-pt-progress mw-pt-progress--complete" title="LinguaLibre:統計 (przetłumaczono 91%)" lang="ja">日本語</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/oc" class="mw-pt-progress mw-pt-progress--complete" title="Estatisticas (przetłumaczono 82%)" lang="oc">occitan</a>&#160;• ‎<span class="mw-pt-languages-ui mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete" lang="pl">polski</span>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/sv" class="mw-pt-progress mw-pt-progress--complete" title="LinguaLibre:Statistik (przetłumaczono 100%)" lang="sv">svenska</a>&#160;• ‎<a href="/wiki/LinguaLibre:Stats/uk" class="mw-pt-progress mw-pt-progress--high" title="LinguaLibre:Статистика (przetłumaczono 73%)" lang="uk">українська</a></div></div>
+<p><br />
+</p>
+<h2><span id="Statystyki_ogólne"></span><span class="mw-headline" id="Statystyki_og.C3.B3lne">Statystyki ogólne</span></h2>
+<div class="queryviz" data="0">
+					<div class="queryviz-toggle"></div>
+					<div class="queryviz-wrap"></div>
+					<div class="queryviz-result"></div>
+					<div class="queryviz-loading">
+						<center>... Loading ...</center>
+					</div>
+				</div>
+<h2><span id="Miesięczna_aktywność"></span><span class="mw-headline" id="Miesi.C4.99czna_aktywno.C5.9B.C4.87">Miesięczna aktywność</span></h2>
+<div class="queryviz" data="1">
+					<div class="queryviz-toggle"></div>
+					<div class="queryviz-wrap"></div>
+					<div class="queryviz-result"></div>
+					<div class="queryviz-loading">
+						<center>... Loading ...</center>
+					</div>
+				</div>
+<h2><span id="Liczba_nagrań_poszczególnych_języków"></span><span class="mw-headline" id="Liczba_nagra.C5.84_poszczeg.C3.B3lnych_j.C4.99zyk.C3.B3w">Liczba nagrań poszczególnych języków</span></h2>
+<div class="queryviz" data="2">
+					<div class="queryviz-toggle"></div>
+					<div class="queryviz-wrap"></div>
+					<div class="queryviz-result"></div>
+					<div class="queryviz-loading">
+						<center>... Loading ...</center>
+					</div>
+				</div>
+<h2><span class="mw-headline" id="Najaktywniejsi_spikerzy">Najaktywniejsi spikerzy</span></h2>
+<div class="queryviz" data="3">
+					<div class="queryviz-toggle"></div>
+					<div class="queryviz-wrap"></div>
+					<div class="queryviz-result"></div>
+					<div class="queryviz-loading">
+						<center>... Loading ...</center>
+					</div>
+				</div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20210309202242
+Cache expiry: 0
+Dynamic content: true
+CPU time usage: 0.027 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 158/1000000
+Post‐expand include size: 26/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3177/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div></div><div class="printfooter">
+Źródło: „<a dir="ltr" href="https://lingualibre.org/index.php?title=LinguaLibre:Stats/pl&amp;oldid=477829">https://lingualibre.org/index.php?title=LinguaLibre:Stats/pl&amp;oldid=477829</a>”</div>
+					<div class="clear_both"></div>
+				</div>
+	    		<footer>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>		    						</footer>
+			</article>
+		</section>
+
+		<footer id="footer">
+			<div id="footer-left">
+								<ul id="footer-left-top">
+											<li id="footer-lastmod"> Tę stronę ostatnio edytowano 9 mar 2021, 14:32.</li>
+											<li id="footer-copyright">Treść udostępniana na licencji <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons 4.0 Attribution-ShareAlike</a>, jeśli nie podano inaczej.</li>
+									</ul>
+				<ul id="footer-left-bottom">
+											<li id="footer-privacy"><a href="/wiki/LinguaLibre:Privacy_policy" title="LinguaLibre:Privacy policy">Polityka ochrony prywatności</a></li>
+											<li id="footer-aboutwmfr"><a href="https://www.wikimedia.fr">O Wikimédia France</a></li>
+											<li id="footer-contact"><a href="mailto:info@wikimedia.fr">Kontakt</a></li>
+																<li id="footer-twitter"><a href="https://twitter.com/LingLibre_WMFr"><img src="/skins/BlueLL/assets/stylesheets/icons/twitter-blue.svg"/></a></li>
+									</ul>
+			</div>
+			<ul id="footer-right-icons">
+				<li id="toolbox-menu" class="dropdown mobile-menu">
+					<input id="toolbox-input" type="checkbox" role="button" aria-labelledby="toolbox-button" autocomplete="off" class="dropdown-input mobile-menu-input">
+					<label id="toolbox-button" for="toolbox-input" class="dropdown-label mobile-menu-label">Narzędzia</label>
+					<ul id="toolbox" class="dropdown-content mobile-menu-content">
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/LinguaLibre:Stats/pl" title="Pokaż listę wszystkich stron linkujących do tej strony [j]" accesskey="j">Linkujące</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/LinguaLibre:Stats/pl" rel="nofollow" title="Ostatnie zmiany w stronach, do których ta strona linkuje [k]" accesskey="k">Zmiany w linkowanych</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="Lista wszystkich specjalnych stron [q]" accesskey="q">Strony specjalne</a></li><li id="t-print"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;printable=yes" rel="alternate" title="Wersja do wydruku [p]" accesskey="p">Wersja do druku</a></li><li id="t-permalink"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;oldid=477829" title="Stały link do tej wersji strony">Link do tej wersji</a></li><li id="t-info"><a href="/index.php?title=LinguaLibre:Stats/pl&amp;action=info" title="Więcej informacji na temat tej strony">Informacje o tej stronie</a></li>						<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="Special:RecentChanges">Ostatnie zmiany</a></li>
+					</ul>
+					<label id="toolbox-mask" for="toolbox-input" class="mobile-menu-mask"></label>
+				</li>
+
+									<li class="copyright">
+													<a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="/resources/assets/licenses/cc-by-sa.png" alt="Creative Commons 4.0 Attribution-ShareAlike" width="88" height="31"/></a>											</li>
+									<li class="poweredby">
+													<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>											</li>
+							</ul>
+		</footer>
+
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.027","walltime":"0.036","ppvisitednodes":{"value":68,"limit":1000000},"ppgeneratednodes":{"value":158,"limit":1000000},"postexpandincludesize":{"value":26,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":3177,"limit":5000000},"entityaccesscount":{"value":0,"limit":250},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20210309202242","ttl":0,"transientcontent":true}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":169});});</script>
+		</body>
+		</html>
+
